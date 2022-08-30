@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Student Portal - Personal Information</title>
+{% endblock %}
+
+{% block dash_active %}
+class="active"
+{% endblock %}
+
+{% block content %}
+
+<div class="row personal">
+    {% for details in student %}
+
+    <div class="row top">
+
+        <div class="col-md-2 img">
+
+            <img src="{{ url_for('static', filename='images/' + details['imgpath']) }}" alt="profildetail pic" class="img-fluid mt-2">
+
+            <h1 class="text-center">{{ details['firstname'] }} {{ details['lastname'] }}</h1>
+            <p class="text-center">Admission No: 0{{ details['student_id'] }}</p>
+
+        </div>
+
+        <div class="col-md-6 side">
+
+            <div class="row info1">Personal Information</div>      
+
+            <div class="infos">
+                <p>Email: {{ details['email'] }}</p>
+                <p>Gender: {{ details['gender'] }}</p>
+                <p>Phone Number: {{ details['phone'] }}</p>
+                <p>Date of Birth: {{ details['dateofbirth'] }}</p>
+                <p>Address: {{ details['address'] }}</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row middle">
+        <div class="row other">Other Information</div>
+        <div class="row others">
+            <p class="col-md-4">State of Origin: {{ details['stateoforigin'] }}</p>
+            <p class="col-md-4">Local Government: {{ details['localgovernment'] }}</p>
+        </div>
+    </div>
+
+    <div class="row bottom">
+        <div class="row b1">Academics Related Information</div>
+        <div class="row b2">
+            <p class="col-md-3">Next of Kin: {{ details['nextofkin'] }}</p>
+            <p class="col-md-2">Jamb score: {{ details['jambscore'] }}</p>
+        </div>
+
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}

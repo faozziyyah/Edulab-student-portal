@@ -1,0 +1,319 @@
+/* Sticky footer styles-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 45px;
+  }
+
+  .navbar, .footer {
+    background-color: #343252;
+    font-family: monospace;
+    color: #fff;
+  }
+
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff;
+  }
+
+  li{
+    list-style-type: none;
+  }
+
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
+
+/* home page */
+
+.portal{
+  align-items: center;
+}
+
+.port{
+  margin-top: 5em;
+}
+
+  img {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 50px;
+  }
+
+  .portal h1{
+    color: #343252;
+    font-weight: 900;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .portal p{
+    color: rgb(231, 57, 57);
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .btn{
+    background-color: #343252;
+    color: #fff;
+  }
+
+  .btn-success, .btn-danger{
+    border: none;
+  }
+
+  .buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .btn:hover, .btn-success:hover, .btn-danger:hover{
+    color: rgb(255, 196, 0);
+    text-decoration: none;
+  }
+
+  /* form page */
+
+  .content{
+    background-color: #d2e2f0;
+    width: 80%;
+    margin: auto;
+    position: absolute;
+    left: 10em;
+    top: 100px;
+    padding-bottom: 2em;
+    z-index: 9999;
+    animation-name: animate;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+  }
+
+  .action{
+    text-align: center;
+  }
+
+  .details{
+    display: flex;
+    width: 95%;
+    margin: auto;
+  }
+
+  .details h1{
+    color: #343252;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .intro{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: auto;
+  }
+
+  #close{
+    font-size: 20px;
+    font-weight: 700;
+    padding: 5px;
+  }
+
+  @keyframes animate {
+    from {
+      top: 0px;
+    }
+     to {
+      top: 100px;
+     }
+  }
+
+  .intro p{
+    color: rgb(185, 29, 29);
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .intro h5{
+    background-color: #343252;
+    color: #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    margin-top: -8px;
+  }
+
+  #student-form{
+    width: 90%;
+    margin: auto;
+  }
+
+  #logo{
+    width: 50%;
+  }
+
+  .details .form-select{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: none;
+  }
+  .origin{
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    font-family: serif;
+    font-size: 20px;
+    color: #34325e;
+  }
+
+
+  /*students page*/
+  .students{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  .status{
+    display: flex;
+  }
+
+  .info{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    background-color: lightblue;
+    width: 100%;
+    margin: auto;
+    color: blue;
+    padding: 10px;
+    margin-bottom: 2em;
+  }
+
+  .students .form-select{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid rgb(209, 206, 206);
+    border-radius: 3px;
+  }
+
+  .clear{
+    font-size: 15px;
+  }
+
+  #search{
+    color: #fff;
+  }
+
+  .main{
+    width: 100%;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: #343252;
+  }
+
+  .table{
+    background-color: #fff;
+    margin-top: 1em;
+    width: 100%;
+  }
+
+  /* dashboard page*/
+
+  .personal{
+    margin-top: 2em;
+  }
+
+  .img{
+    background-color: #343252;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    margin-left: 3em;
+    color: #fff;
+  }
+
+  .img img{
+    width: 100%;
+    height: 150px;
+  }
+
+  .img > h1{
+    font-size: 25px;
+  }
+
+  .info1{
+    background-color: lightblue;
+    margin-left: 1em;
+    color: #343252;
+    font-weight: 600;
+    padding: 5px;
+    margin-bottom: 2em;
+  }
+
+  .infos{
+    margin-left: 10px;
+    font-weight: 600;
+  }
+  
+  .middle, .bottom{
+    width: 95%;
+    margin: auto;
+    margin-top: 2em;
+  }
+
+  .other, .b1{
+    background-color: lightblue;
+    color: #343252;
+    font-weight: 600;
+    padding: 5px;
+    margin-bottom: 2em;
+  }
+
+  .others, .b2{
+    font-weight: 600;
+  }
+
+  .side-active {
+    text-shadow: 2px 2px;
+  }
+
+  .sidenav > div {
+    margin-left: -15px;
+  }
+
+  #logo-form{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%; 
+    height: 45px;
+    background-color: #343252;
+    color: #9d9d9d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer span {
+    margin-top: 15px;
+  }
+  

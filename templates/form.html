@@ -1,0 +1,241 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Student Portal - Get Started</title>
+{% endblock %}
+
+{% block home_active %}
+class="active"
+{% endblock %}
+
+{% block content %}
+<div class="row details">
+
+    <h1>Student Portal Form</h1>
+
+    <div class="row intro">
+      <p>please fill in all required information</p>
+      <h5>Personal Information</h5>
+    </div>
+
+    <form class="row g-3" action="/templates/students.html" method="POST" id="student-form">
+        <div class="col-md-12">
+            <label for="inputEmail4" class="form-label">Upload Image:</label>
+            <input type="file" class="form-control" name="logo" id="logo" accept="image/*"  />
+        </div>
+
+        <div class="col-md-6">
+            <label for="firstname" class="form-label">First Name {{ user_response }}</label>
+            <input type="text" class="form-control" id="firstname" name="fname" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="middlename" class="form-label">Middle Name {{ user_response }}</label>
+            <input type="text" class="form-control" id="middlename" name="mname" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="lastname" class="form-label">Last Name {{ user_response }}</label>
+            <input type="text" class="form-control" id="lastname" name="lname" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email {{ user_response }}</label>
+          <input type="email" class="form-control" id="inputEmail4" name="email" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="dob" class="form-label">Date of Birth {{ user_response }}</label>
+          <input type="date" class="form-control" id="dob" name="dob" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="phone" class="form-label">Phone Number {{ user_response }}</label>
+          <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" name="phone" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputAddress2" class="form-label">Address {{ user_response }}</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Enter Address" name="address" required>
+        </div>
+
+        <div class="col-md-6 gender">
+          <div>
+            <label class="form-label">Gender</label>
+          </div>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required>
+                <label class="form-check-label" for="inlineRadio1" name="male">Male</label>
+        
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" required>
+                <label class="form-check-label" for="inlineRadio2" name="female">Female</label>      
+        </div>
+        
+        <section class="col-md-12 section">
+          <div class="col-md-6 origin">
+            
+              <label for="inputState" class="form-label">State of Origin</label>
+                      
+                  <select class="form-select col-md-12" aria-label=".form-select-sm">
+                      <option selected>select state</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                  </select>
+                   
+          </div>
+  
+          <div class="col-md-6 origin">
+            
+              <label for="inputState" class="form-label">Local Government</label>
+                     
+            <select class="form-select col-md-12" aria-label=".form-select-sm">
+                  <option selected>select local Government</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+              </select>
+          </div>
+        </section>
+            
+        <div class="col-md-12">
+          <label for="inputZip" class="form-label">Next of Kin {{ user_response }}</label>
+          <input type="text" class="form-control" id="inputZip" name="kin">
+        </div>
+
+        <div class="col-md-6">
+            <label for="score" class="form-label">Jamb Score {{ user_response }}</label>
+            <input type="number" class="form-control" id="score" name="score" placeholder="Enter jamb score" required>
+        </div>
+
+          <button type="submit" class="btn col-md-12 btn1">Submit</button>
+
+      </form>
+
+</div>
+
+<!-- Modal -->
+  
+
+        <!-- new student modal form 
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+
+                <div class="row modal-header">
+
+                    <div class="row details">
+                        <h1>Student Portal Form</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                        <div class="row intro">
+                          <p>please fill in all required information</p>
+                          <h5>Personal Information</h5>
+                        </div>                    
+
+                </div>
+
+                <div class="modal-body">
+                  
+                    <form class="row g-3" action="{{ url_for('insert')}}" method="POST" id="student-form">
+                        <div class="col-md-12">
+                            <label for="inputEmail4" class="form-label">Upload Image:</label>
+                            <input type="file" class="form-control" name="logo" id="logo" accept="image/*" />
+                        </div>
+                
+                        <div class="col-md-6">
+                            <label for="firstname" class="form-label">First Name {{ user_response }}</label>
+                            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter first name" required>
+                        </div>
+                
+                        <div class="col-md-6">
+                            <label for="middlename" class="form-label">Middle Name {{ user_response }}</label>
+                            <input type="text" class="form-control" id="middlename" name="mname" placeholder="Enter middle name" required>
+                        </div>
+                
+                        <div class="col-md-6">
+                            <label for="lastname" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastname" name="lname" placeholder="Enter last name" required>
+                        </div>
+                
+                        <div class="col-md-6">
+                          <label for="email" class="form-label">Email</label>
+                          <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required>
+                        </div>
+                
+                        <div class="col-md-6">
+                          <label for="dob" class="form-label">Date of Birth</label>
+                          <input type="date" class="form-control" id="dob" name="dob" placeholder="Enter date of birth" required>
+                        </div>
+                
+                        <div class="col-md-6">
+                          <label for="phone" class="form-label">Phone Number</label>
+                          <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" name="phone" required>
+                        </div>
+                
+                        <div class="col-md-6">
+                          <label for="inputAddress2" class="form-label">Address</label>
+                          <input type="text" class="form-control" id="inputAddress2" placeholder="Enter Address" name="address" required>
+                        </div>
+                
+                        <div class="col-md-6 gender">
+                          <div>
+                            <label class="form-label">Gender</label>
+                          </div>
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required>
+                                <label class="form-check-label" for="inlineRadio1" name="male">Male</label>
+                        
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" required>
+                                <label class="form-check-label" for="inlineRadio2" name="female">Female</label>      
+                        </div>
+                        
+                        <section class="col-md-12 section">
+                          <div class="col-md-6 origin">
+                            
+                              <label for="inputState" class="form-label">State of Origin</label>
+                                      
+                                  <select class="form-select col-md-12" aria-label=".form-select-sm">
+                                      <option selected>select state</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                  </select>
+                                   
+                          </div>
+                  
+                          <div class="col-md-6 origin">
+                            
+                              <label for="inputState" class="form-label">Local Government</label>
+                                     
+                            <select class="form-select col-md-12" aria-label=".form-select-sm">
+                                  <option selected>select local Government</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                              </select>
+                          </div>
+                        </section>
+                            
+                        <div class="col-md-6">
+                          <label for="inputZip" class="form-label">Next of Kin</label>
+                          <input type="text" class="form-control" id="inputZip" name="kin" placeholder="Enter nest of kin">
+                        </div>
+                
+                        <div class="col-md-6">
+                            <label for="jambscore" class="form-label">Jamb Score</label>
+                            <input type="number" class="form-control" id="jambscore" name="jambscore" placeholder="Enter jamb score" required>
+                        </div>
+                
+                      </form>
+
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn1">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+{% endblock %}

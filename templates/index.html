@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Student Portal</title>
+{% endblock %}
+
+{% block home_active %}
+class="active"
+{% endblock %}
+
+{% block content %}
+<div class="row portal">
+
+    <div class="col-12 col-md-6 port">
+        <h1>Student Main Portal</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <p>Edulab student portal registration, join us today <br /> for your online courses.</p>
+            </div>
+            <div class="col-md-4">
+                <a class="nav-link" aria-current="page" href="{{ url_for('students') }}">
+                    <button type="button" class="btn btn-block btn-lg">Get Started</button>
+                </a>  
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 image">
+        <img src="{{ url_for('static', filename='images/homepage.svg') }}" alt="" />
+    </div>
+
+</div>
+{% endblock %}
