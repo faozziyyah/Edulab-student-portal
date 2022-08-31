@@ -1,7 +1,7 @@
 # Edulab-student-portal
 psql -U postgres -h localhost
 
-full stack CRUD web application built with HTML, CSS, Bootstrap, JavaScript, Python, MySQL, and Flask framework.
+full stack CRUD web application built with HTML, CSS, Bootstrap, JavaScript, Python, Postgres, and Flask framework.
 
 ## Table of contents
 
@@ -49,7 +49,7 @@ Users should be able to:
 - Javascript
 - Ajax
 - [Flask](https://flask.palletsprojects.com/en/2.1.x/) - A web development microframework built with python
-- MySQL
+- Postgres
 
 ### What I learned
 
