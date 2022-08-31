@@ -1,20 +1,16 @@
 from ast import Return
 import os
 from flask import Flask, render_template, request, redirect, url_for, flash, redirect, current_app
-from flaskext.mysql import MySQL
-import pymysql.cursors
-import datetime
-import json
+#from flaskext.mysql import MySQL
+#import pymysql.cursors
+import datetime, json, psycopg2
 
 app = Flask(__name__)
 
 app.secret_key = 'secret'
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-app.config['MYSQL_DATABASE_DB'] = 'portal'
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = '@OPEyemi2001'
-
-mysql = MySQL(app, cursorclass=pymysql.cursors.DictCursor)
+def get_db_connection():
+  conn = psycopg2.connect("dbname=portal user=postgres password=opeyemi2001 host=localhost")
+  return conn
 
 @app.route('/')
 def index():
@@ -22,7 +18,7 @@ def index():
 
 @app.route('/students')
 def students():
-    conn = mysql.get_db()
+    conn = get_db_connection()
     cur = conn.cursor()
     cur.execute('select * from students')
     rv = cur.fetchall()
@@ -54,9 +50,9 @@ def insert():
             name = firstname + '_' + lastname + '_' + image.filename
             filepath = os.path.join(current_app.root_path, 'static/images/' + name)
             image.save(filepath)
-            conn = mysql.get_db()
+            conn = get_db_connection()
             cur = conn.cursor()
-            cur.execute('insert into students(student_id, firstname, lastname, phone, jambscore, email, nextofkin, dateofbirth, address, gender, stateoforigin, localgovernment, imgpath) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (student_id, firstname, lastname, phone, jambscore, email, nextofkin, dateofbirth, address, gender, stateoforigin, localgovernment, name))
+            cur.execute('insert into students(student_id, firstname, lastname, phone, jambscore, email, nextofkin, dateofbirth, address, gender, stateoforigin, localgovernment, image) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (student_id, firstname, lastname, phone, jambscore, email, nextofkin, dateofbirth, address, gender, stateoforigin, localgovernment, name))
             conn.commit()
             cur.close()
             print(image)
@@ -71,7 +67,7 @@ def details():
     student = ''
     detail = request.form['id']
     if request.method == 'POST':
-      conn = mysql.get_db()
+      conn = get_db_connection()
       cur = conn.cursor()
       cur.execute('select * from students where student_id=%s', (detail))
       rv = cur.fetchall()
@@ -85,9 +81,9 @@ def details():
 @app.route('/delete/<string:id_data>', methods =['GET'])
 def delete(id_data):
     flash('student record deleted successfully')
-    conn = mysql.get_db()
+    conn = get_db_connection()
     cur = conn.cursor()
-    cur.execute(' delete from students where student_id=%s ', (id_data))
+    cur.execute(' delete from students where student_id=%s', (id_data))
     conn.commit()
     return redirect(url_for('students'))
 
@@ -102,7 +98,7 @@ def search():
         print('jamb:', jamb)
 
         if name or email or gender or jamb:
-            conn = mysql.get_db()
+            conn = get_db_connection()
             cur = conn.cursor()
             cur.execute('select * from students where firstname like %s or firstname is null or lastname like %s or lastname is null or email like %s or email is null or gender like %s or gender is null or jambscore = %s or jambscore is null order by student_id', (name, name, email, gender, jamb))
             rv = cur.fetchall()

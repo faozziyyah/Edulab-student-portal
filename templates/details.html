@@ -17,10 +17,10 @@ class="active"
 
         <div class="col-md-2 img">
 
-            <img src="{{ url_for('static', filename='images/' + details['imgpath']) }}" alt="profildetail pic" class="img-fluid mt-2">
+            <img src="{{ url_for('static', filename='images/' + details[12]) }}" alt="profildetail pic" class="img-fluid mt-2">
 
-            <h1 class="text-center">{{ details['firstname'] }} {{ details['lastname'] }}</h1>
-            <p class="text-center">Admission No: 0{{ details['student_id'] }}</p>
+            <h1 class="text-center">{{ details[1] }} {{ details[2] }}</h1>
+            <p class="text-center">Admission No: 0{{ details[0] }}</p>
 
         </div>
 
@@ -29,11 +29,11 @@ class="active"
             <div class="row info1">Personal Information</div>      
 
             <div class="infos">
-                <p>Email: {{ details['email'] }}</p>
-                <p>Gender: {{ details['gender'] }}</p>
-                <p>Phone Number: {{ details['phone'] }}</p>
-                <p>Date of Birth: {{ details['dateofbirth'] }}</p>
-                <p>Address: {{ details['address'] }}</p>
+                <p>Email: {{ details[5] }}</p>
+                <p>Gender: {{ details[9] }}</p>
+                <p>Phone Number: {{ details[3] }}</p>
+                <p>Date of Birth: {{ details[7] }}</p>
+                <p>Address: {{ details[8] }}</p>
             </div>
 
         </div>
@@ -43,16 +43,16 @@ class="active"
     <div class="row middle">
         <div class="row other">Other Information</div>
         <div class="row others">
-            <p class="col-md-4">State of Origin: {{ details['stateoforigin'] }}</p>
-            <p class="col-md-4">Local Government: {{ details['localgovernment'] }}</p>
+            <p class="col-md-4">State of Origin: {{ details[10] }}</p>
+            <p class="col-md-4">Local Government: {{ details[11] }}</p>
         </div>
     </div>
 
     <div class="row bottom">
         <div class="row b1">Academics Related Information</div>
         <div class="row b2">
-            <p class="col-md-3">Next of Kin: {{ details['nextofkin'] }}</p>
-            <p class="col-md-2">Jamb score: {{ details['jambscore'] }}</p>
+            <p class="col-md-3">Next of Kin: {{ details[6] }}</p>
+            <p class="col-md-2">Jamb score: {{ details[4] }}</p>
         </div>
 
         </div>

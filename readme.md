@@ -1,4 +1,5 @@
 # Edulab-student-portal
+psql -U postgres -h localhost
 
 full stack CRUD web application built with HTML, CSS, Bootstrap, JavaScript, Python, MySQL, and Flask framework.
 
