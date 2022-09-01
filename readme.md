@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: (https://github.com/faozziyyah/Edulab-student-portal)
-- Live link: (Not yet available)
+- Live link: (https://edulab-student-portal.herokuapp.com/)
 
 ## My process
 
