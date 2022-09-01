@@ -89,4 +89,8 @@ def delete(id_data):
 ### Useful resources
 
 - [Flask](https://flask.palletsprojects.com/en/2.1.x/) - A web development microframework built with python
+<<<<<<< HEAD
 - [Postgresql](https://www.postgresql.org/) - The world's most popular open source database
+=======
+- [MySQL](https://www.mysql.com/) - The world's most popular open source database
+>>>>>>> 8a9870f67ee869db39a066d9324ea5c44c0a0b47
