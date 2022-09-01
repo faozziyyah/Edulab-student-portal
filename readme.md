@@ -1,7 +1,6 @@
 # Edulab-student-portal
-psql -U postgres -h localhost
 
-full stack CRUD web application built with HTML, CSS, Bootstrap, JavaScript, Python, MySQL, and Flask framework.
+full stack CRUD web application built with HTML, CSS, Bootstrap, JavaScript, Python, Postgres, and Flask framework.
 
 ## Table of contents
 
@@ -21,10 +20,9 @@ full stack CRUD web application built with HTML, CSS, Bootstrap, JavaScript, Pyt
 
 Users should be able to:
 
-- Check for the meaning of words.
-- Add a new word with it's meaning to the dictionary.
-- Update the a and its meaning.
-- Delete a word from the dictionary
+- Add a new student.
+- View each student's details.
+- Delete a student data.
 - View the optimal layout for the site depending on their device's screen size
 
 ### Screenshot
@@ -49,7 +47,7 @@ Users should be able to:
 - Javascript
 - Ajax
 - [Flask](https://flask.palletsprojects.com/en/2.1.x/) - A web development microframework built with python
-- MySQL
+- Postgres
 
 ### What I learned
 
@@ -70,9 +68,9 @@ $( window ).on("load", function() {
 @app.route('/delete/<string:id_data>', methods =['GET'])
 def delete(id_data):
     flash('student record deleted successfully')
-    conn = mysql.get_db()
+    conn = get_db_connection()
     cur = conn.cursor()
-    cur.execute(' delete from students where student_id=%s ', (id_data))
+    cur.execute(' delete from students where student_id=%s', (id_data))
     conn.commit()
     return redirect(url_for('students'))
 ```
@@ -91,4 +89,4 @@ def delete(id_data):
 ### Useful resources
 
 - [Flask](https://flask.palletsprojects.com/en/2.1.x/) - A web development microframework built with python
-- [MySQL](https://www.mysql.com/) - The world's most popular open source database
+- [Postgresql](https://www.postgresql.org/) - The world's most popular open source database
