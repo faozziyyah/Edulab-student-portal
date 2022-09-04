@@ -316,4 +316,41 @@ html {
   .footer span {
     margin-top: 15px;
   }
+
+  .bi, #bi-delete, #bi-cancel{
+    display: none;
+  }
   
+  @media screen and (max-width: 680px) {
+    .main{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: auto;
+      margin-bottom: 2em;
+      margin-top: 2em;
+    }
+
+    .Jamb, #jamb, .Email, #emails, .Gender, #genders, .delete, #logo-cancel{
+      display: none;
+    }
+
+    .bi, #bi-delete, #bi-cancel{
+      display: block;
+    }
+
+    .content{
+      width: 80%;
+      left: 2em;
+    }
+
+    .img{
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      margin: auto;
+      margin-left: 1em;
+      margin-bottom: 2em;
+    }
+
+  }
